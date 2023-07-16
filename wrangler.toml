@@ -1,0 +1,13 @@
+name = "telegram-cfworker"
+main = "build/worker/shim.mjs"
+compatibility_date = "2023-03-22"
+
+kv_namespaces = []
+
+[vars]
+BOT_TOKEN = "62091************1fJI"
+WEBHOOK_URL = "https://telegram-cfworker.itsusinn.workers.dev/webhook"
+
+[build]
+command = "cargo install -q worker-build --target=x86_64-unknown-linux-musl && worker-build --release"
+# env = ["RUSTFLAGS=-C target-feature=+simd128"]

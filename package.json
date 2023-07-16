@@ -1,0 +1,12 @@
+{
+	"name": "pastebin",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler publish",
+		"dev": "wrangler dev --remote"
+	},
+	"devDependencies": {
+		"wrangler": "^2.16.0"
+	}
+}

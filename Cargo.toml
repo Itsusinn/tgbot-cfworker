@@ -1,0 +1,26 @@
+[package]
+name = "telegram-worker"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = "0.0.17"
+serde = { version = "1.0.160", default-features = false }
+serde_json = "1.0.96"
+thiserror = "1.0.43"
+tokio = { version = "1.28.2", default-features = false }
+telegram-bot-api = { path = "telegram-bot-api", default-features = false, features = ["wasm"] }
+reqwest = { version = "0.11.18", default-features = false }
+
+[profile.release]
+panic = "abort"
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
